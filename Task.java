@@ -16,16 +16,16 @@ public class Task implements Priority, Comparable<Task>{
 	 * COMPLETE - represents a task that has been finished.
 	 */
 	enum Status {NOT_STARTED, IN_PROGRESS, COMPLETE};
-	
+
 	final String name; //represents the name of the task
 	private int priority; //represents the priority of the task
-	private Status status; //represents the progression status of the task
+	private Status s; //represents the progression status of the task
 	
 	public Task(String taskName)
 	{
 		this.name = taskName;
 		setPriority(1);
-		setStatus(Status.NOT_STARTED);
+		this.s = Status.NOT_STARTED;
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class Task implements Priority, Comparable<Task>{
 	 */
 	public Status getStatus()
 	{
-		return status;
+		return s;
 	}
 	
 	/**
@@ -51,9 +51,9 @@ public class Task implements Priority, Comparable<Task>{
 	 * passing in a new progression status of the task in the parameter list.
 	 * @param taskStatus
 	 */
-	public void setStatus(Status taskStatus)
+	public void setStatus(String taskStatus)
 	{
-		this.status = taskStatus;
+		this.s = Status.valueOf(taskStatus);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class Task implements Priority, Comparable<Task>{
 	
 	@Override
 	public String toString() {
-		return "Task [name=" + name + ", priority=" + priority + ", status=" + status + "]";
+		return "Task [name=" + name + ", priority=" + priority + ", status=" + s + "]";
 	}
 	
 	

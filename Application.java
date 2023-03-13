@@ -34,7 +34,7 @@ public class Application {
 		System.out.println("Task Class");
 		Task paper = new Task("Ethics Paper");
 		paper.setPriority(7);
-		paper.setStatus(Task.Status.NOT_STARTED);
+		paper.setStatus("NOT_STARTED");
 		System.out.println("Task Name: " + paper.getName());
 		System.out.println("Task Priority: " + paper.getPriority());
 		System.out.println("Task Status: " + paper.getStatus());
@@ -42,7 +42,7 @@ public class Application {
 		
 		Task program = new Task("Programming Assignment");
 		program.setPriority(1);
-		program.setStatus(Task.Status.COMPLETE);
+		program.setStatus("COMPLETE");
 		System.out.println("Task Name: " + program.getName());
 		System.out.println("Task Priority: " + program.getPriority());
 		System.out.println("Task Status: " + program.getStatus());
